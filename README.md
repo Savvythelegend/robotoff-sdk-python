@@ -83,13 +83,13 @@ Each endpoint is mapped to a simple Python function, ready to use.
 
 ```bash
 robotoff-sdk-python/
-├── robotoff_sdk/           # Auto-generated SDK code
-├── examples/               # Usage examples
-│   └── popular_questions.py
-├── LICENSE                 # AGPL-3.0 License
-├── NOTICE.txt              # Additional licensing info if applicable
-├── README.md               # This file
-└── pyproject.toml          # Project metadata (install config)
+├── examples/
+├── robotoff_sdk/
+├── openapi.json
+├── openapitools.json
+├── pyproject.toml
+├── README.md
+└── LICENSE
 ```
 
 ---
