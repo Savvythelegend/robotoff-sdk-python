@@ -1,0 +1,10 @@
+[project]
+name = "robotoff-sdk-python"
+version = "0.1.0"
+description = "Auto-generated SDK for Robotoff API"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "AGPL-3.0" }
+
+[tool.setuptools.packages.find]
+where = ["robotoff_sdk"] 
