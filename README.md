@@ -1,18 +1,27 @@
 # Robotoff Python SDK
 
-Auto-generated Python SDK for [Robotoff](https://github.com/openfoodfacts/robotoff) using its [OpenAPI specification](https://openfoodfacts.github.io/robotoff/references/api/).
+[![OpenAPI Docs](https://img.shields.io/badge/docs-openapi-blue)](https://openfoodfacts.github.io/robotoff/references/api/)
 
-This SDK lets developers easily interact with Robotoff's machine learning-powered product question/answer engine.
+This repository provides an auto-generated Python SDK for [Robotoff](https://github.com/openfoodfacts/robotoff), based on its [OpenAPI specification](https://openfoodfacts.github.io/robotoff/references/api/).
 
-## 📦 Installation
+The SDK enables developers to interact with Robotoff's machine learning-powered product question/answer engine and related APIs with minimal setup.
+
+---
+
+## Installation
+
+To install the SDK locally:
 
 ```bash
 pip install .
-```
+````
 
-## 🚀 Quick Examples
+---
 
-### Get Popular Questions
+## Example Usage
+
+### 1. Get Popular Questions
+
 ```python
 from robotoff_sdk.api.questions import get_popular_questions
 from robotoff_sdk import Configuration, ApiClient
@@ -23,7 +32,10 @@ with ApiClient(configuration) as api_client:
     print(response.body)
 ```
 
-### Fetch Annotations for a Product
+---
+
+### 2. Fetch Annotations for a Product
+
 ```python
 from robotoff_sdk.api.annotations import get_annotations
 from robotoff_sdk import Configuration, ApiClient
@@ -32,10 +44,13 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     response = get_annotations(barcode="1234567890123")
     for annotation in response.body.get('annotations', []):
-        print(f"[📝] Annotation: {annotation}")
+        print("Annotation:", annotation)
 ```
 
-### Get Insights for a Product
+---
+
+### 3. Get Insights for a Product
+
 ```python
 from robotoff_sdk.api.insight import get_insights
 from robotoff_sdk import Configuration, ApiClient
@@ -44,20 +59,64 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     response = get_insights(barcode="1234567890123")
     for insight in response.body.get('insights', []):
-        print(f"[💡] Insight: {insight}")
+        print("Insight:", insight)
 ```
 
-See the `examples/` directory for more usage patterns.
+> For more usage patterns, refer to the `examples/` directory.
 
-## 🧪 Available APIs
+---
 
-* Questions API
-* Annotations API
-* Insight API
-* Predictions API
+## Available APIs
 
-More available under `robotoff_sdk.api.*`
+This SDK exposes all public Robotoff APIs via:
 
-## 🔗 License
+* `robotoff_sdk.api.questions`
+* `robotoff_sdk.api.annotations`
+* `robotoff_sdk.api.insight`
+* `robotoff_sdk.api.predictions`
 
-This SDK is licensed under the [AGPL-3.0 License](LICENSE) in alignment with Robotoff. 
+Each endpoint is mapped to a simple Python function, ready to use.
+
+---
+
+## Project Structure
+
+```bash
+robotoff-sdk-python/
+├── robotoff_sdk/           # Auto-generated SDK code
+├── examples/               # Usage examples
+│   └── popular_questions.py
+├── LICENSE                 # AGPL-3.0 License
+├── NOTICE.txt              # Additional licensing info if applicable
+├── README.md               # This file
+└── pyproject.toml          # Project metadata (install config)
+```
+
+---
+
+## Development & Contribution
+
+This is an initial prototype generated using [OpenAPI Generator](https://openapi-generator.tech/).
+Future improvements may include tests, CI/CD, type stubs, and integration into the main Open Food Facts SDK ecosystem.
+
+If you'd like to contribute:
+
+* Fork the repository
+* Use `openapi-generator` to regenerate as needed
+* Submit a PR with clear changes
+
+---
+
+## License
+
+This SDK is distributed under the terms of the [GNU Affero General Public License v3.0](LICENSE), in alignment with the Robotoff project.
+
+If using or distributing this code, please ensure compliance with AGPL-3.0 terms, especially when used over a network.
+
+---
+
+## Acknowledgements
+
+This SDK is based on the public OpenAPI specification provided by [Robotoff](https://github.com/openfoodfacts/robotoff), part of the [Open Food Facts](https://openfoodfacts.org) project.
+
+Generated using [OpenAPI Generator](https://openapi-generator.tech/).
