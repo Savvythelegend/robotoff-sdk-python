@@ -1,10 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "robotoff-sdk-python"
 version = "0.1.0"
-description = "Auto-generated SDK for Robotoff API"
+description = "Auto-generated SDK for Robotoff API using OpenAPI specification."
 readme = "README.md"
 requires-python = ">=3.7"
 license = { text = "AGPL-3.0" }
+authors = [
+    { name = "Open Food Facts contributors", email = "contact@openfoodfacts.org" }
+]
+keywords = ["robotoff", "sdk", "openapi", "open food facts", "api client"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+dependencies = [
+    "requests >=2.25.1",
+    "urllib3 >=1.26.5"
+]
+
+[project.urls]
+Homepage = "https://github.com/Savvythelegend/robotoff-sdk-python"
+Documentation = "https://openfoodfacts.github.io/robotoff/references/api/"
+Source = "https://github.com/Savvythelegend/robotoff-sdk-python"
+Issues = "https://github.com/openfoodfacts/robotoff/issues"
+
 
 [tool.setuptools.packages.find]
-where = ["robotoff_sdk"] 
+where = ["robotoff_sdk"]

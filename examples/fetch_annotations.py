@@ -1,9 +1,13 @@
-from robotoff_sdk.api.annotations import get_annotations
+# examples/annotations.py
+import argparse
+from robotoff_sdk.openapi_client.api import ann_api
 from robotoff_sdk import Configuration, ApiClient
 
-configuration = Configuration()
-with ApiClient(configuration) as api_client:
-    # Replace 'barcode' with a real product barcode if needed
-    response = get_annotations(barcode="1234567890123")
-    for annotation in response.body.get('annotations', []):
-        print(f"[📝] Annotation: {annotation}") 
+parser = argparse.ArgumentParser()
+parser.add_argument("--barcode", type=str, required=True)
+args = parser.parse_args()
+
+config = Configuration()
+with ApiClient(config) as api_client:
+    res = get_annotations(barcode=args.barcode)
+    print(res.body)
